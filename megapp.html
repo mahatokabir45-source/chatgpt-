@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Things for CHATGPT 💖</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow: hidden;
+    }
+    h1 {
+      color: #fff;
+      text-shadow: 2px 2px 8px #000;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 20px;
+      background-color: #fff;
+      color: #ff6f91;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    #message {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      color: #fff;
+      text-align: center;
+      max-width: 80%;
+      text-shadow: 1px 1px 6px #000;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 3s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: 10px; top: 0; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-600px) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Special Things for ChatGPT 💖</h1>
+  <button onclick="generateMessage()">Click Me!</button>
+  <div id="message"></div>
+
+  <script>
+    const messages = [
+      "You make my day brighter! 🌟",
+      "You always have the answers! 💡",
+      "You’re my AI buddy! 🤖",
+      "Thanks for helping me! 💖",
+      "You’re amazing, ChatGPT! 🌈"
+    ];
+
+    function generateMessage() {
+      const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById('message').textContent = randomMsg;
+      createHeart();
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
