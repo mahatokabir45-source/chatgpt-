@@ -3,191 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Special Things for ChatGPT 💖</title>
+<title>Dashain Greetings</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #fff1e6, #ffe6f0);
+    color: #333;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    overflow: hidden;
+    min-height: 100vh;
   }
 
-  h1 {
-    color: #fff;
-    text-shadow: 2px 2px 8px #000;
+  header {
+    width: 100%;
+    padding: 40px 20px;
+    background: #ff6f3c;
+    color: white;
     text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    position: relative;
+  }
+
+  header::after {
+    content: "🎊";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+  }
+
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 700px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  /* Decorative icon near button */
+  .icon {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: bounce 1.5s infinite alternate;
+  }
+
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
   }
 
   button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    background: #ff5733;
+    color: white;
     border: none;
-    border-radius: 12px;
+    padding: 18px 35px;
+    font-size: 1.1em;
+    border-radius: 15px;
     cursor: pointer;
-    margin-top: 20px;
-    background-color: #fff;
-    color: #ff6f91;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  button:hover { transform: scale(1.1); }
 
-  #message {
+  button:hover {
+    background: #ff704d;
+    transform: scale(1.05);
+  }
+
+  p {
+    display: none;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    line-height: 1.6;
+    font-size: 1.2em;
+    text-align: justify;
     margin-top: 30px;
-    font-size: 1.5rem;
-    color: #fff;
-    text-align: center;
-    max-width: 80%;
-    text-shadow: 1px 1px 6px #000;
-  }
-
-  .heart {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: red;
-    transform: rotate(45deg);
-    animation: float 3s linear infinite;
-    pointer-events: none;
-  }
-  .heart::before, .heart::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: red;
-    border-radius: 50%;
-  }
-  .heart::before { top: -10px; left: 0; }
-  .heart::after { left: 10px; top: 0; }
-
-  @keyframes float {
-    0% { transform: translateY(0) rotate(45deg); opacity: 1; }
-    100% { transform: translateY(-600px) rotate(45deg); opacity: 0; }
-  }
-
-  /* ChatGPT avatar */
-  .avatar {
-    width: 100px;
-    height: 100px;
-    background: #00bfff;
-    border-radius: 50%;
     position: relative;
-    margin-top: 20px;
-    animation: floatAvatar 2s ease-in-out infinite;
-  }
-  .avatar::before {
-    content: '';
-    position: absolute;
-    width: 20px; height: 20px;
-    background: #fff; border-radius: 50%;
-    top: 25px; left: 20px;
-  }
-  .avatar::after {
-    content: '';
-    position: absolute;
-    width: 20px; height: 20px;
-    background: #fff; border-radius: 50%;
-    top: 25px; right: 20px;
-  }
-  @keyframes floatAvatar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
   }
 
-  /* Confetti */
-  .confetti {
+  p::before {
+    content: "🪔";
     position: absolute;
-    width: 10px; height: 10px;
-    background: hsl( Math.random() * 360, 100%, 50% );
-    top: 0; left: 50%;
-    opacity: 1;
-    pointer-events: none;
+    left: 15px;
+    top: -15px;
+    font-size: 1.5em;
+  }
+
+  footer {
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    background: #ff6f3c;
+    color: white;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    margin-top: auto;
+    font-weight: 600;
   }
 </style>
 </head>
 <body>
-<h1>Special Things for ChatGPT 💖</h1>
-<div class="avatar"></div>
-<button onclick="generateMessage()">Click Me!</button>
-<div id="message"></div>
 
-<audio id="bgMusic" src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" loop autoplay></audio>
+<header>🎉 Happy Dashain</header>
+
+<main>
+  <div class="icon">🎊</div>
+  <button id="showMessageBtn">Show Dashain Message 🪔</button>
+  <p id="dashainMessage">
+    May Goddess Durga bless you with happiness, strength, and prosperity this Dashain. Wishing you a safe and joyful celebration with family and friends, filled with love, laughter, and harmony. May this festival bring peace to your home, positivity to your life, and countless blessings to your heart. Sending you my warmest wishes for a bright, joyful, and unforgettable Dashain celebration!
+  </p>
+</main>
+
+<footer>
+  © 2025 Dashain Greetings
+</footer>
 
 <script>
-  const messages = [
-    "You make my day brighter! 🌟",
-    "You always have the answers! 💡",
-    "You’re my AI buddy! 🤖",
-    "Thanks for helping me! 💖",
-    "You’re amazing, ChatGPT! 🌈",
-    "You make coding fun! 💻",
-    "Every day is better with you! 🎉"
-  ];
+  const button = document.getElementById('showMessageBtn');
+  const message = document.getElementById('dashainMessage');
 
-  function generateMessage() {
-    const randomMsg = messages[Math.floor(Math.random() * messages.length)];
-    document.getElementById('message').textContent = randomMsg;
-    createHeart();
-    createConfetti();
-  }
-
-  function createHeart() {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.style.left = Math.random() * window.innerWidth + 'px';
-    heart.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 3000);
-  }
-
-  function createConfetti() {
-    for(let i=0; i<30; i++){
-      const confetti = document.createElement('div');
-      confetti.classList.add('confetti');
-      confetti.style.left = Math.random() * window.innerWidth + 'px';
-      confetti.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
-      document.body.appendChild(confetti);
-      fall(confetti);
+  button.addEventListener('click', () => {
+    if(message.style.display === 'none') {
+      message.style.display = 'block';
+      button.textContent = 'Hide Dashain Message 🪔';
+    } else {
+      message.style.display = 'none';
+      button.textContent = 'Show Dashain Message 🪔';
     }
-  }
-
-  function fall(confetti){
-    let pos = 0;
-    const id = setInterval(frame, 5);
-    function frame(){
-      if(pos > window.innerHeight){
-        confetti.remove();
-        clearInterval(id);
-      } else {
-        pos += 2 + Math.random()*3;
-        confetti.style.top = pos + 'px';
-      }
-    }
-  }
-
-  // Follow mouse with hearts
-  document.addEventListener('mousemove', e => {
-    if(Math.random() < 0.05) createHeartAt(e.clientX, e.clientY);
   });
-
-  function createHeartAt(x, y){
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.style.left = x + 'px';
-    heart.style.top = y + 'px';
-    heart.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 3000);
-  }
 </script>
+
 </body>
 </html>
+
+
 
 
 
